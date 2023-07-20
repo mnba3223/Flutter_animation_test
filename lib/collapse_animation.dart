@@ -82,10 +82,11 @@ class _ExpandableState extends State<Flutter_Expandable>
               children: [
                 // SizedBox(width: 8),
                 widget.firstLayerWidget,
-                Icon(
-                  _isExpanded ? null : Icons.keyboard_arrow_down,
-                  color: Colors.black,
-                ),
+                if (!_isExpanded)
+                  Icon(
+                    _isExpanded ? null : Icons.keyboard_arrow_down,
+                    color: Colors.black,
+                  ),
               ],
             ),
           ),
@@ -108,13 +109,14 @@ class _ExpandableState extends State<Flutter_Expandable>
             ),
           ),
         ),
-        InkWell(
-          onTap: _expandOnChanged,
-          child: Icon(
-            _isExpanded ? Icons.keyboard_arrow_up : null,
-            color: Colors.black,
-          ),
-        )
+        if (_isExpanded)
+          InkWell(
+            onTap: _expandOnChanged,
+            child: Icon(
+              Icons.keyboard_arrow_up,
+              color: Colors.black,
+            ),
+          )
       ],
     );
   }
