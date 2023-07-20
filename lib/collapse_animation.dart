@@ -4,17 +4,17 @@ import 'package:flutter/material.dart';
 ///
 
 /// 收合使用元件
-class Expandable extends StatefulWidget {
-  ///  父widget
+class Flutter_Expandable extends StatefulWidget {
+  ///   father layer widget
   final Widget firstLayerWidget;
 
-  /// 子widget
+  /// children layer widget
   final List<Widget> secondLayerWidgets;
 
   /// 預設開合選項
   final bool isExpandedByDefault;
 
-  const Expandable({
+  const Flutter_Expandable({
     Key? key,
     required this.firstLayerWidget,
     required this.secondLayerWidgets,
@@ -25,8 +25,10 @@ class Expandable extends StatefulWidget {
   _ExpandableState createState() => _ExpandableState();
 }
 
-class _ExpandableState extends State<Expandable> with TickerProviderStateMixin {
+class _ExpandableState extends State<Flutter_Expandable>
+    with TickerProviderStateMixin {
   late final AnimationController _controller;
+
   late final Animation<double> _animation;
 
   late final Tween<double> _sizeTween;
@@ -89,7 +91,7 @@ class _ExpandableState extends State<Expandable> with TickerProviderStateMixin {
           ),
         ),
 
-        ///因動畫的問題，設定height會把動畫搞丟
+        ///因動畫的問題，設定height會使動畫失效
         SizeTransition(
           sizeFactor: _isExpanded
               ? _sizeTween.animate(_animation)

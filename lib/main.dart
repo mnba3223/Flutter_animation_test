@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Container(
                   color: Colors.greenAccent,
-                  child: Expandable(
+                  child: Flutter_Expandable(
                     firstLayerWidget: Container(child: Text('First Layer')),
                     secondLayerWidgets: [
                       Container(
@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Container(
                   color: Colors.yellowAccent,
-                  child: Expandable(
+                  child: Flutter_Expandable(
                     firstLayerWidget: Container(child: Text('First Layer2')),
                     secondLayerWidgets: [
                       Container(
